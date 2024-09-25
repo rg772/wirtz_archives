@@ -16,7 +16,7 @@ return new class extends Migration
             $table->timestamps();
             $table->string('name');
             $table->string('season');
-            $table->enum('status', ['active', 'deleted', 'hide']);
+            $table->enum('status', App\Helpers\StatusHelper::getStatuses());
         });
     }
 

@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string('name');
-            $table->enum('status', ['active', 'deleted', 'hide']);
+            $table->enum('status', App\Helpers\StatusHelper::getStatuses());
         });
     }
 

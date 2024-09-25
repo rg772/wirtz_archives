@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('venues', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->enum('status', ['active', 'deleted', 'hide']);
+            $table->enum('status', App\Helpers\StatusHelper::getStatuses());
             $table->timestamps();
         });
     }

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string("lastname");
             $table->string('netid');
             $table->year('grad');
-            $table->enum('status', ['active', 'deleted', 'hide']);
+            $table->enum('status', App\Helpers\StatusHelper::getStatuses());
             $table->timestamps();
         });
     }
