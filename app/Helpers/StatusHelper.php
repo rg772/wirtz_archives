@@ -4,6 +4,6 @@ namespace App\Helpers;
 
 class StatusHelper {
     public static function getStatuses() {
-        return ['active', 'deleted', 'hide'];
+        return ['active', 'hide'];
     }
 }

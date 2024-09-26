@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->enum('status', App\Helpers\StatusHelper::getStatuses());
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

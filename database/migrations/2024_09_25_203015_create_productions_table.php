@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('season');
             $table->enum('status', App\Helpers\StatusHelper::getStatuses());
+            $table->softDeletes();
         });
     }
 

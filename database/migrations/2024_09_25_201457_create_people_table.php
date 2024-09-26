@@ -19,6 +19,7 @@ return new class extends Migration
             $table->year('grad');
             $table->enum('status', App\Helpers\StatusHelper::getStatuses());
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
