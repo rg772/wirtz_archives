@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Database\Factories;
 
-use App\Helpers\StatusHelper;
+use App\Helpers\CommonValues;
 use App\Models\Role;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -29,7 +29,7 @@ final class RoleFactory extends Factory
     {
         return [
             'name' => fake()->name,
-            'status' => fake()->randomElement(StatusHelper::getStatuses()),
+            'status' => fake()->randomElement(CommonValues::getStatuses()),
         ];
     }
 }

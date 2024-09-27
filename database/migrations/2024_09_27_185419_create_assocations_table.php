@@ -17,7 +17,7 @@ return new class extends Migration {
             $table->foreignId('production_id')->constrained('productions')->cascadeOnDelete();
             $table->foreignId('role_id')->constrained('roles')->cascadeOnDelete();
             $table->softDeletes();
-            $table->enum('status', App\Helpers\StatusHelper::getStatuses());
+            $table->enum('status', App\Helpers\CommonValues::getStatuses());
         });
     }
 

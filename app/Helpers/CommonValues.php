@@ -2,7 +2,7 @@
 
 namespace App\Helpers;
 
-class StatusHelper {
+class CommonValues {
     public static function getStatuses() {
         return ['active', 'hide'];
     }

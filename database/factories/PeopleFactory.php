@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Database\Factories;
 
-use App\Helpers\StatusHelper;
+use App\Helpers\CommonValues;
 use App\Models\People;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -32,7 +32,7 @@ final class PeopleFactory extends Factory
             'lastname' => fake()->lastName,
             'netid' => fake()->word,
             'grad' => fake()->year,
-            'status' => fake()->randomElement(StatusHelper::getStatuses()),
+            'status' => fake()->randomElement(CommonValues::getStatuses()),
         ];
     }
 }

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Database\Factories;
 
-use App\Helpers\StatusHelper;
+use App\Helpers\CommonValues;
 use App\Models\Production;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -30,7 +30,7 @@ final class ProductionFactory extends Factory
         return [
             'name' => fake()->name,
             'season' => fake()->word,
-            'status' => fake()->randomElement(StatusHelper::getStatuses()),
+            'status' => fake()->randomElement(CommonValues::getStatuses()),
         ];
     }
 }
