@@ -10,7 +10,7 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::create('assocations', function (Blueprint $table) {
+        Schema::create('associations', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->foreignId('people_id')->constrained('people')->cascadeOnDelete();
@@ -26,6 +26,6 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('assocations');
+        Schema::dropIfExists('associations');
     }
 };
