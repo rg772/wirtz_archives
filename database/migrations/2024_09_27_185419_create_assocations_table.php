@@ -13,9 +13,9 @@ return new class extends Migration {
         Schema::create('associations', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->foreignId('people_id')->constrained('people')->cascadeOnDelete();
-            $table->foreignId('production_id')->constrained('productions')->cascadeOnDelete();
-            $table->foreignId('role_id')->constrained('roles')->cascadeOnDelete();
+            $table->foreignIdFor(\App\Models\People::class)->constrained()->onDelete('cascade');;
+            $table->foreignIdFor(\App\Models\Production::class)->constrained()->onDelete('cascade');;
+            $table->foreignIdFor(\App\Models\Role::class)->constrained()->onDelete('cascade');;
             $table->softDeletes();
             $table->enum('status', App\Helpers\CommonValues::getStatuses());
         });
