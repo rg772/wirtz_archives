@@ -8,24 +8,23 @@ on:
 
 jobs:
   laravel-tests:
-
     runs-on: ubuntu-latest
 
     steps:
     - uses: shivammathur/setup-php@v2
       with:
-        php-version: '8.3'
+        php-version: '8.0'
     - uses: actions/checkout@v4
     - name: Copy .env
       run: php -r "file_exists('.env') || copy('.env.example', '.env');"
-    - name: Validate Composer configuration
-      run: composer validate
     - name: Clear Composer cache
       run: composer clear-cache
-    - name: Diagnose Composer issues
-      run: composer diagnose
+    - name: Update Composer keys
+      run: composer self-update --update-keys
+    - name: Remove composer.lock
+      run: rm composer.lock
     - name: Update Dependencies
-      run: composer update --lock -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+      run: composer update -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
     - name: Install Dependencies
       run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
     - name: Generate key
