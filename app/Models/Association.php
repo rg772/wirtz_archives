@@ -18,6 +18,8 @@ class Association extends Model
         'status',
     ];
 
+
+
     /**
      * Get the person associated with the association.
      */
