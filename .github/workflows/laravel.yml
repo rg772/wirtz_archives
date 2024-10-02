@@ -19,10 +19,6 @@ jobs:
       run: php -r "file_exists('.env') || copy('.env.example', '.env');"
     - name: Clear Composer cache
       run: composer clear-cache
-    - name: Update Composer keys
-      run: composer self-update --update-keys
-    - name: Remove composer.lock
-      run: rm composer.lock
     - name: Update Dependencies
       run: composer update -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
     - name: Install Dependencies
