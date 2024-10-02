@@ -1,5 +1,5 @@
 # Archives
 
 
-![Laravel Tests](https://github.com/OWNER/REPOSITORY/actions/workflows/WORKFLOW-FILE/badge.svg)
+![Laravel Tests](https://github.com/rg772/wirtz_archives/actions/workflows/laravel.yml/badge.svg)
 
