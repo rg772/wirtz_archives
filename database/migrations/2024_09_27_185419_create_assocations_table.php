@@ -16,8 +16,9 @@ return new class extends Migration {
             $table->foreignIdFor(\App\Models\People::class)->constrained()->onDelete('cascade');;
             $table->foreignIdFor(\App\Models\Production::class)->constrained()->onDelete('cascade');;
             $table->foreignIdFor(\App\Models\Role::class)->constrained()->onDelete('cascade');;
+            $table->string('desc')->nullable();
             $table->softDeletes();
-            $table->enum('status', App\Helpers\CommonValues::getStatuses());
+            $table->enum('status', App\Helpers\CommonValues::getStatuses())->default('active');
         });
     }
 

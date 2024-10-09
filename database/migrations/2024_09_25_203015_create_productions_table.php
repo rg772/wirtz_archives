@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string('name');
-            $table->string('season');
-            $table->enum('status', App\Helpers\CommonValues::getStatuses());
+            $table->string('season')->nullable();
+            $table->enum('status', App\Helpers\CommonValues::getStatuses())->default('active');
             $table->softDeletes();
         });
     }

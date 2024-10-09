@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('firstname');
             $table->string("lastname");
             $table->string('netid');
-            $table->year('grad');
-            $table->enum('status', App\Helpers\CommonValues::getStatuses());
+            $table->year('grad')->nullable();
+            $table->enum('status', App\Helpers\CommonValues::getStatuses())->default('active');
             $table->timestamps();
             $table->softDeletes();
         });
